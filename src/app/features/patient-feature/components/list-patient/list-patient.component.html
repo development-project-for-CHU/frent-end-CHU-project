@@ -1,0 +1,76 @@
+<section id="content">
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Gestion des patients</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Patients</a>
+          </li>
+          <li><i class='bx bx-chevron-right'></i></li>
+          <li>
+            <a class="active" href="#">Liste</a>
+          </li>
+        </ul>
+      </div>
+      <button (click)="openFormDialog()" type="button" class="btn-download">
+        <i class="fa-solid fa-plus"></i>
+        <span class="text">Ajouter un patient</span>
+      </button>
+    </div>
+    <ul class="box-info">
+      <!-- These could be dynamic if you have relevant data -->
+      <li>
+        <i class='bx bxs-calendar-check'></i>
+        <span class="text">
+          <h3>1020</h3>
+          <p>New Orders</p>
+        </span>
+      </li>
+      <li>
+        <i class='bx bxs-group'></i>
+        <span class="text">
+          <h3>2834</h3>
+          <p>Visitors</p>
+        </span>
+      </li>
+      <li>
+        <i class='bx bxs-dollar-circle'></i>
+        <span class="text">
+          <h3>$2543</h3>
+          <p>Total Sales</p>
+        </span>
+      </li>
+    </ul>
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Recent Patients</h3>
+          <i class='bx bx-search'></i>
+          <i class='bx bx-filter'></i>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Date d'inscription</th>
+              <th>Status</th>
+              <!-- Add other headers as needed -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let patient of patients">
+              <td>
+                <img src="https://secure.gravatar.com/avatar/yourhash?s=100&d=identicon&r=g">
+                <p>{{ patient.nom }} {{ patient.prenom }}</p>
+              </td>
+              <td>{{ patient.dateNaissance  }}</td>
+              <td><span class="status completed">Completed</span></td>
+              <!-- Adapt status and other fields as needed -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</section>

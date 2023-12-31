@@ -1,0 +1,73 @@
+<section class="h-100 gradient-form p-3">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-12">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <div class="card-body p-md-5 mx-md-4">
+                                
+                                <div class="text-center">
+                                    <h2 class="mt-1 mb-5 pb-1">Créer un patient</h2>
+                                </div>
+                                
+                                <form [formGroup]="addPatientForm" (ngSubmit)="onSubmit()">
+                                    <!-- Nom et Prénom -->
+                                    <div class="row">
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="nom" class="form-control" id="nom"
+                                                placeholder="Nom du patient">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="prenom" class="form-control" id="prenom"
+                                                placeholder="Prénom du patient">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <!-- CIN -->
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="cin" class="form-control" id="cin"
+                                                placeholder="CIN du patient">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="numTel" class="form-control" id="numTel"
+                                                placeholder="Numéro de téléphone">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="date" formControlName="dateNaissance" class="form-control"
+                                                id="dateNaissance" placeholder="Date de Naissance">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <select formControlName="sexe" class="form-control">
+                                                <option value="" disabled>Sélectionnez le sexe...</option>
+                                                <option *ngFor="let sex of sexes | keyvalue" [value]="sex.key">
+                                                  {{ sex.value }}
+                                                </option>
+                                              </select>
+                                              
+                                        </div>
+                                    </div>
+                                    <!-- Adresse -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" formControlName="adresse" class="form-control" id="adresse"
+                                            placeholder="Adresse du patient">
+                                    </div>
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn-sign"
+                                            type="submit">Enregistrer</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
