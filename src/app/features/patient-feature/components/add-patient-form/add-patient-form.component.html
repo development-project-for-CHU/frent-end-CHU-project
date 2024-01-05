@@ -1,11 +1,12 @@
-<section class="h-100 gradient-form p-3">
-    <div class="container py-5 h-100">
+<section class="h-100 gradient-form">
+    <div class="container py-4 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-12">
-                <div class="card rounded-3 text-black">
+                <div class="card  text-black">
                     <div class="row g-0">
                         <div class="col-lg-12">
-                            <div class="card-body p-md-5 mx-md-4">
+                            <button class="btn-close" (click)="closeDialog()"></button>
+                            <div class="card-body p-md-2 mx-md-4">
                                 
                                 <div class="text-center">
                                     <h2 class="mt-1 mb-5 pb-1">Créer un patient</h2>
@@ -44,13 +45,25 @@
                                         <div class="form-outline col-xl-6 mb-4">
                                             <select formControlName="sexe" class="form-control">
                                                 <option value="" disabled>Sélectionnez le sexe...</option>
-                                                <option *ngFor="let sex of sexes | keyvalue" [value]="sex.key">
-                                                  {{ sex.value }}
-                                                </option>
-                                              </select>
+                                                <option [value]="sexes.HOMME">Homme</option>
+                                                <option [value]="sexes.FEMME">Femme</option>
+                                            </select>
                                               
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <!-- Ville -->
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="ville" class="form-control" id="ville"
+                                                placeholder="Ville ...">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="codePostal" class="form-control" id="codePostal"
+                                                placeholder="Code Postal">
+                                        </div>
+                                    </div>
+
+                                    
                                     <!-- Adresse -->
                                     <div class="form-outline mb-4">
                                         <input type="text" formControlName="adresse" class="form-control" id="adresse"

@@ -1,0 +1,114 @@
+<section class="h-100 gradient-form ">
+    <div class="container h-100 m-0 p-0">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-12">
+                <div class="card text-black p-3">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <button class="btn-close" (click)="closeDialog()"></button>
+                            <div class="card-body">
+                                
+                                <div class="text-center">
+                                    <h2 class="mt-1 mb-5 pb-1">Créer un utilisateur</h2>
+                                </div>
+                                
+                                <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                                    
+                                    <div class="row">
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="nom" class="form-control" id="nom"
+                                            placeholder="Nom ..">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="prenom" class="form-control" placeholder="Prenom .."
+                                            id="prenom">             
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="username" class="form-control" id="username"
+                                            placeholder="Username ...">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="email" formControlName="email" class="form-control" id="email"
+                                            placeholder="Email ...">
+                                              
+                                        </div>
+                                    </div>
+
+                                    <!-- Password -->
+                                    <div class="form-outline mb-4">
+                                        <input type="password" formControlName="password" class="form-control" id="password"
+                                            placeholder="Mot de passe">
+                                    </div>
+
+                                    
+                                    <div class="row">
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="numTel" class="form-control" id="numTel"
+                                            placeholder="Numéro de téléphone">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="date" formControlName="dateNaissance" class="form-control"
+                                            id="dateNaissance">             
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="row">
+                                        <div class="form-outline col-xl-8 mb-4">
+                                            <input type="text" formControlName="adresse" class="form-control" id="adresse"
+                                            placeholder="Adresse">
+                                        </div>
+                                        <div class="form-outline col-xl-4 mb-4">
+                                            <select formControlName="genre" class="form-control">
+                                                <option value="" disabled selected>Genre ..</option>
+                                                <option [value]="genre.HOMME" >Homme</option>
+                                                <option [value]="genre.FEMME">Femme</option>
+                                            </select>             
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="ville" class="form-control" id="ville"
+                                            placeholder="Ville">
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="codePostal" class="form-control" id="codePostal"
+                                            placeholder="Code Postal">            
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <select formControlName="roles" class="form-control">
+                                                <option value="" disabled selected>Sélectionnez le rôle...</option>
+                                                <option [value]="roles.ADMIN">Admin</option>
+                                                <option [value]="roles.CHEF_SERVICE">Chef service</option>                                            
+                                                <option [value]="roles.MEDECIN">Medecin</option>                                            
+                                                <option [value]="roles.INFIRMIER">Infermier</option>                                            
+                                            </select>
+                                        </div>
+                                        <div class="form-outline col-xl-6 mb-4">
+                                            <input type="text" formControlName="service" class="form-control" id="service"
+                                            placeholder="Service">         
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center pt-1  pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn-sign"
+                                            type="submit">Enregistrer</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

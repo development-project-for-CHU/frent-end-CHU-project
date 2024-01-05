@@ -1,7 +1,7 @@
 #content {
     position: relative;
-    width: calc(100% - 280px);
-    left: 280px;
+    width: calc(100% - 240px);
+    left: 240px;
     transition: .3s ease;
   }
 
@@ -9,7 +9,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 280px;
+    width: 240px;
     height: 100%;
     background: var(--light);
     z-index: 2000;

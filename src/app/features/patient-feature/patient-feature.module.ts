@@ -6,19 +6,22 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { PatientService } from './services/patient.service';
 import { ListPatientComponent } from './components/list-patient/list-patient.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DossierPatientComponent } from './components/dossier-patient/dossier-patient.component';
 
 
 @NgModule({
   declarations: [
     AddPatientFormComponent,
-    ListPatientComponent
+    ListPatientComponent,
+    DossierPatientComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule, 
     FormsModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers : [PatientService]
 })

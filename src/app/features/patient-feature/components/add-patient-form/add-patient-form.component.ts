@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Sexe } from '../../enums/sexe.enum';
+import { Genre } from '../../enums/genre.enum';
 import { Patient } from '../../models/patient.model';
+import { PatientService } from '../../services/patient.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-patient-form',
@@ -10,19 +12,25 @@ import { Patient } from '../../models/patient.model';
 })
 export class AddPatientFormComponent {
   // Make Sexe available in the template
-  sexes = Sexe; 
+  sexes = Genre; 
 
   addPatientForm = this.fb.group({
     nom: ['', Validators.required],
     prenom: ['', Validators.required],
     cin: ['', Validators.required],
     numTel: ['', Validators.required],
-    sexe: ['', Validators.required],
+    sexe: [0 , Validators.required],
     adresse: ['', Validators.required],
-    dateNaissance: ['', Validators.required]
+    dateNaissance: ['', Validators.required],
+    ville: ['', Validators.required],
+    codePostal: ['', Validators.required],
+    
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder , 
+    private patientService : PatientService , 
+    public dialogRef: MatDialogRef<AddPatientFormComponent>
+    ) {}
 
   onSubmit() {
     if (this.addPatientForm.valid) {
@@ -34,22 +42,40 @@ export class AddPatientFormComponent {
       const cin = formValue.cin || '';
       const numTel = formValue.numTel || '';
       const adresse = formValue.adresse || '';
-      const sexe = Sexe[formValue.sexe as keyof typeof Sexe] || Sexe.Homme; // Fallback to a default enum value if undefined
+      const gender = formValue.sexe || 0 ; 
       const dateNaissance = formValue.dateNaissance ? new Date(formValue.dateNaissance) : new Date();
+      const ville = formValue.ville || '';
+      const codePostal = formValue.codePostal || '';
+
   
       // Now create a new Patient with the assured values
       const newPatient = new Patient(
+        null,
         nom,
         prenom,
         cin,
         numTel,
         dateNaissance,
-        sexe,
-        adresse
+        gender,
+        adresse,
+        ville , 
+        codePostal
       );
   
       console.log('New Patient:', newPatient);
-      // Additional logic to handle the new patient (e.g., sending to a backend)
+
+      this.patientService.addPatient(newPatient).subscribe(
+        (data)=> {
+            console.log("AddPatientFormComponent : ",data)
+            this.dialogRef.close();
+        },
+        (error)=> {
+          console.log("Error : " , error)
+        }
+      )
+
+
     }
   }
+  closeDialog() {this.dialogRef.close();}
 }

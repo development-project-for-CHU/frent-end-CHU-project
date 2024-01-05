@@ -1,7 +1,7 @@
 <section id="sidebar" [ngClass]="{ 'hide': isCollapsed }">
   <a href="#" class="brand">
-      <i class='bx bxs-smile'></i>
-      <span class="text">AdminHub</span>
+      <i class='bx bx-plus-medical'></i>
+      <span class="text">AdminCHU</span>
     </a>
     <ul class="side-menu top">
       <li [routerLinkActive]="['active']" >
@@ -17,15 +17,21 @@
         </a>
       </li>
       <li [routerLinkActive]="['active']">
-        <a routerLink="/analytics">
+        <a routerLink="/dossier">
           <i class='bx bxs-doughnut-chart' ></i>
-          <span class="text">Services</span>
+          <span class="text">Dossier patient</span>
         </a>
       </li>
       <li [routerLinkActive]="['active']">
-        <a routerLink="/message">
-          <i class='bx bxs-message-dots' ></i>
+        <a routerLink="/users">
+          <i class='bx bxs-group' ></i>
           <span class="text">Utilisateurs</span>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a routerLink="/categories">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="text">Categories</span>
         </a>
       </li>
       <li [routerLinkActive]="['active']">

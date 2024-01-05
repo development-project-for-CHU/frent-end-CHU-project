@@ -1,29 +1,38 @@
-import { Sexe } from "../enums/sexe.enum";
+import { Genre } from "../enums/genre.enum";
 
 export class Patient {
+  ipp : string | null | undefined ;
   nom: string;
   prenom: string;
   cin: string;
   numTel: string;
   dateNaissance: Date;
-  sexe: Sexe;
+  genre : Genre;
   adresse: string;
+  ville : String ; 
+  codePostal : String ;
 
   constructor(
+    ipp :string | null, 
     nom: string,
     prenom: string,
     cin: string,
     numTel: string,
     dateNaissance: Date,
-    sexe: Sexe,
-    adresse: string
+    genre: Genre,
+    adresse: string , 
+    ville : String , 
+    codePostal : String
   ) {
+    this.ipp = ipp;
     this.nom = nom;
     this.prenom = prenom;
     this.cin = cin;
     this.numTel = numTel;
     this.dateNaissance = dateNaissance;
-    this.sexe = sexe;
+    this.genre = genre;
     this.adresse = adresse;
+    this.ville = ville ;
+    this.codePostal=codePostal
   }
 }

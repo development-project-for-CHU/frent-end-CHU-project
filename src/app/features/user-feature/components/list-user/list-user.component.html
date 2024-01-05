@@ -1,0 +1,86 @@
+<section id="content">
+    <main>
+      <div class="head-title">
+        <div class="left">
+          <h1>Gestion des utilisateurs</h1>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#">Accueil</a>
+            </li>
+            <li><i class='bx bx-chevron-right'></i></li>
+            <li>
+              <a class="active" href="#">Liste des utilisateurs</a>
+            </li>
+          </ul>
+        </div>
+        <a (click)="openFormDialog()" type="button" class="btn-download">
+          <i class="fa-solid fa-plus"></i>
+          <span class="text">Ajouter un utilisateur</span>
+        </a>
+      </div>
+      <!-- Rest of your stats can go here if you want to keep them -->
+      <ul class="box-info">
+        <!-- These could be dynamic if you have relevant data -->
+        <li>
+            <i class='bx bxs-group'></i>
+            <span class="text">
+            <h3>10</h3>
+            <p>Medecin</p>
+          </span>
+        </li>
+        <li>
+          <i class='bx bxs-group'></i>
+          <span class="text">
+            <h3>5</h3>
+            <p>Chef service</p>
+          </span>
+        </li>
+        <li>
+            <i class='bx bxs-group'></i>
+            <span class="text">
+            <h3>10</h3>
+            <p>Infirmier</p>
+          </span>
+        </li>
+      </ul>
+      <div class="table-data">
+        <div class="order">
+          <div class="head">
+            <h3>Utilisateurs récents</h3>
+            <i class='bx bx-search'></i>
+            <i class='bx bx-filter'></i>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Nom et prénom</th>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Service</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>
+                  <p>{{ user.nom }} {{ user.prenom }}</p>
+                </td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.roles }}</td>
+                <td>{{ user.service }}</td>
+                <td class="table-button-cell">
+                  <button mat-icon-button class="edit-button" (click)="editUser(user)">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button mat-icon-button class="delete-button" (click)="deleteUser(user.id)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </section>
+  

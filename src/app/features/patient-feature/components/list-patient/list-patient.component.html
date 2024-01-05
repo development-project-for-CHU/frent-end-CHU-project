@@ -13,32 +13,33 @@
           </li>
         </ul>
       </div>
-      <button (click)="openFormDialog()" type="button" class="btn-download">
+      <a (click)="openFormDialog()" type="button" class="btn-download">
         <i class="fa-solid fa-plus"></i>
         <span class="text">Ajouter un patient</span>
-      </button>
+      </a>
     </div>
     <ul class="box-info">
       <!-- These could be dynamic if you have relevant data -->
       <li>
-        <i class='bx bxs-calendar-check'></i>
+        <i class='bx bxs-group'></i>
+
         <span class="text">
-          <h3>1020</h3>
-          <p>New Orders</p>
+          <h3>10</h3>
+          <p>Homme</p>
         </span>
       </li>
       <li>
         <i class='bx bxs-group'></i>
         <span class="text">
-          <h3>2834</h3>
-          <p>Visitors</p>
+          <h3>12</h3>
+          <p>Femme</p>
         </span>
       </li>
       <li>
-        <i class='bx bxs-dollar-circle'></i>
+        <i class='bx bxs-calendar-check'></i>
         <span class="text">
-          <h3>$2543</h3>
-          <p>Total Sales</p>
+          <h3>4</h3>
+          <p>Nombre de patient ajouté aujourdhui</p>
         </span>
       </li>
     </ul>
@@ -52,9 +53,14 @@
         <table>
           <thead>
             <tr>
-              <th>Nom</th>
-              <th>Date d'inscription</th>
-              <th>Status</th>
+              <th>Nom et prénom</th>
+              <th>N° IIP</th>
+              <th>N° CIN</th>
+              <th>N° Tel</th>
+              <th>ville</th>
+              <th>Date naissance</th>
+              <th>Genre </th>
+              <th>Actions</th>
               <!-- Add other headers as needed -->
             </tr>
           </thead>
@@ -62,11 +68,22 @@
             <tr *ngFor="let patient of patients">
               <td>
                 <img src="https://secure.gravatar.com/avatar/yourhash?s=100&d=identicon&r=g">
-                <p>{{ patient.nom }} {{ patient.prenom }}</p>
+                <p>{{ patient.nom }} {{ patient.prenom }} </p>
               </td>
-              <td>{{ patient.dateNaissance  }}</td>
-              <td><span class="status completed">Completed</span></td>
-              <!-- Adapt status and other fields as needed -->
+              <td>{{ patient.ipp  }}</td>
+              <td>{{ patient.cin  }}</td>
+              <td>{{ patient.numTel  }}</td>
+              <td>{{ patient.ville  }}</td>
+              <td>{{ patient.dateNaissance | date:'dd/MM/yyyy' }}</td>
+              <td>{{ patient.genre  }}</td>
+              <td class="table-button-cell">
+                <button mat-icon-button class="edit-button" (click)="editPatient(patient)">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button mat-icon-button class="delete-button" (click)="deletePatient(patient.ipp)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
