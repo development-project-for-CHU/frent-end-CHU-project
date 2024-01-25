@@ -4,6 +4,7 @@ import { FeaturesRoutingModule } from './features-routing.module';
 import { PatientFeatureModule } from './patient-feature/patient-feature.module';
 import { UserFeatureModule } from './user-feature/user-feature.module';
 import { CategoriesFeatureModule } from './categories-feature/categories-feature.module';
+import {VisiteFeatureModule} from './visites-feature/visite-feature.module'
 
 @NgModule({
   declarations: [],
@@ -12,7 +13,8 @@ import { CategoriesFeatureModule } from './categories-feature/categories-feature
     FeaturesRoutingModule,
     PatientFeatureModule,
     UserFeatureModule,
-    CategoriesFeatureModule
+    CategoriesFeatureModule,
+    VisiteFeatureModule
   ]
 })
 export class FeaturesModule { }
