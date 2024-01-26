@@ -8,11 +8,15 @@ import { UserAddFormComponent } from './user-feature/components/user-add-form/us
 import { ListUserComponent } from './user-feature/components/list-user/list-user.component';
 import { CategoriesComponent } from './categories-feature/components/categories/categories.component';
 import { CategorieDetailComponent } from './categories-feature/components/categorie-detail/categorie-detail.component';
-
+import{VisiteComponent} from "./visites-feature/components/Visite/visite.component";
 const routes: Routes = [
     {
         path : 'dashboard' , 
         component : DashboardComponent
+    },
+    {
+     path:'VisiteList',
+     component : VisiteComponent
     },
     {
       path : 'dossier' , 
