@@ -47,7 +47,21 @@
       <div class="order">
         <div class="head">
           <h3>Recent Patients</h3>
-          <i class='bx bx-search'></i>
+          <div>
+            <form action="#">
+              <div class="form-input">
+                <input type="text" [(ngModel)]="searchText" name="searchText" (input)="onSearchChange()" placeholder="Search...">
+                <select  [(ngModel)]="searchBy" name="searchBy" (change)="onSearchByChange(searchBy)">
+                  <option value="iip" selected>IIP</option>
+                <option value="cin">CIN</option>
+              </select>
+              <button (click)="onSearch()"><i class='bx bx-search' ></i></button>
+
+              </div>
+            
+            </form>
+            <!-- <i class='bx bx-search'></i> -->
+          </div>
           <i class='bx bx-filter'></i>
         </div>
         <table>
@@ -65,7 +79,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let patient of patients">
+            <tr *ngFor="let patient of filteredPatient">
               <td>
                 <img src="https://secure.gravatar.com/avatar/yourhash?s=100&d=identicon&r=g">
                 <p>{{ patient.nom }} {{ patient.prenom }} </p>
@@ -77,6 +91,9 @@
               <td>{{ patient.dateNaissance | date:'dd/MM/yyyy' }}</td>
               <td>{{ patient.genre  }}</td>
               <td class="table-button-cell">
+                <button mat-icon-button class="consulter-button" (click)="consulterPatient(patient)">
+                  <i class="fas fa-sign-in-alt"></i>
+                </button>
                 <button mat-icon-button class="edit-button" (click)="editPatient(patient)">
                   <i class="fa fa-edit"></i>
                 </button>

@@ -50,7 +50,7 @@ export class AddPatientFormComponent {
   
       // Now create a new Patient with the assured values
       const newPatient = new Patient(
-        null,
+        "null",
         nom,
         prenom,
         cin,

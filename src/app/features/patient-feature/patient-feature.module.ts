@@ -21,7 +21,6 @@ import { DossierPatientComponent } from './components/dossier-patient/dossier-pa
     FormsModule,
     MatDialogModule,
     HttpClientModule,
-    
   ],
   providers : [PatientService]
 })

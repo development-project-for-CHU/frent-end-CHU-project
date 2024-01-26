@@ -14,7 +14,31 @@ import { Genre } from '../../enums/genre.enum';
 export class ListPatientComponent implements OnInit {
   patients: Patient[] = [
      new Patient(
-      '12345',                  // iip: A unique identifier or null
+      '1234125',                  // iip: A unique identifier or null
+      'John',                   // nom: First name
+      'Doe',                    // prenom: Last name
+      'AB123456',               // cin: National ID number or similar
+      '+1234567890',            // numTel: Phone number
+      new Date(1980, 1, 1),     // dateNaissance: Date of birth (Year, Month, Day) - Month is 0-indexed
+      Genre.HOMME,                // sexe: Enum value for gender
+      '123 Main St, Anytown' ,   // adresse: Address
+      '123 Main St, Anytown' ,   // adresse: Address
+      "123456"
+    ),
+    new Patient(
+      '1232345',                  // iip: A unique identifier or null
+      'John',                   // nom: First name
+      'Doe',                    // prenom: Last name
+      'AB123456',               // cin: National ID number or similar
+      '+1234567890',            // numTel: Phone number
+      new Date(1980, 1, 1),     // dateNaissance: Date of birth (Year, Month, Day) - Month is 0-indexed
+      Genre.HOMME,                // sexe: Enum value for gender
+      '123 Main St, Anytown' ,   // adresse: Address
+      '123 Main St, Anytown' ,   // adresse: Address
+      "123456"
+    ),
+    new Patient(
+      '1232345',                  // iip: A unique identifier or null
       'John',                   // nom: First name
       'Doe',                    // prenom: Last name
       'AB123456',               // cin: National ID number or similar
@@ -79,6 +103,40 @@ export class ListPatientComponent implements OnInit {
       console.log('The dialog was closed');
       // handle the result from the dialog if any
     });
+  }
+
+  consulterPatient(patient : Patient): void{
+
+  }
+
+
+
+  ///====================> search logic : 
+  searchText: string = '';
+  searchBy: string = 'iip'; // default search by ID
+
+  filteredPatient = this.patients;
+
+  onSearch() {
+    if (this.searchBy === 'iip') {
+      this.filteredPatient = this.patients.filter(item => item.ipp.toString() === this.searchText);
+      console.log(this.filteredPatient)
+    }
+    else {
+      this.filteredPatient = this.patients.filter(item => item.cin.toLowerCase().includes(this.searchText.toLowerCase()));
+    }
+  }
+
+  onSearchChange() {
+    if (!this.searchText) {
+      this.filteredPatient = this.patients; // Reset if search text is cleared
+    }
+  }
+
+  onSearchByChange(searchByValue: string) {
+    this.searchBy = searchByValue;
+    this.searchText = ''; // Clear search text when changing search type
+    this.filteredPatient = this.patients;
   }
   
 }

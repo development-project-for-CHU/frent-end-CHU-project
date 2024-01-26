@@ -1,7 +1,7 @@
 import { Genre } from "../enums/genre.enum";
 
 export class Patient {
-  ipp : string | null | undefined ;
+  ipp : string;
   nom: string;
   prenom: string;
   cin: string;
@@ -13,7 +13,7 @@ export class Patient {
   codePostal : String ;
 
   constructor(
-    ipp :string | null, 
+    ipp :string, 
     nom: string,
     prenom: string,
     cin: string,
