@@ -8,7 +8,13 @@ import { ListUserComponent } from './user-feature/components/list-user/list-user
 import { CategoriesComponent } from './categories-feature/components/categories/categories.component';
 import { CategorieDetailComponent } from './categories-feature/components/categorie-detail/categorie-detail.component';
 import { NewVisiteComponent } from './visites-feature/components/new-visite/new-visite.component';
+import { LoginComponent } from '../core/components/login/login.component';
 const routes: Routes = [
+  
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'dashboard',
     component: DashboardComponent
@@ -40,6 +46,10 @@ const routes: Routes = [
   {
     path: 'patients/dossier/add-new-visite/:id',
     component: NewVisiteComponent
+  },
+  {
+    path: '*/**',
+    component: LoginComponent
   },
 
 ];

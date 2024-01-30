@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { AnalyticsModule } from '../features/analytics/analytics.module';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AnalyticsModule } from '../features/analytics/analytics.module';
     NavbarComponent,
     SidenavComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

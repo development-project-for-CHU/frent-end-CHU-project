@@ -5,6 +5,7 @@ import { PatientFeatureModule } from './patient-feature/patient-feature.module';
 import { UserFeatureModule } from './user-feature/user-feature.module';
 import { CategoriesFeatureModule } from './categories-feature/categories-feature.module';
 import { VisiteFeatureModule } from './visites-feature/visite-feature.module';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { VisiteFeatureModule } from './visites-feature/visite-feature.module';
     PatientFeatureModule,
     UserFeatureModule,
     CategoriesFeatureModule,
-    VisiteFeatureModule
+    VisiteFeatureModule,
+    CoreModule
   ]
 })
 export class FeaturesModule {}
