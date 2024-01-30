@@ -90,7 +90,7 @@
   .profile-stats {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0;
+    padding: 8px 0;
     background-color: #3C91E6; /* Same as the card background color */
     align-items: center;
     font-size: 24px; 

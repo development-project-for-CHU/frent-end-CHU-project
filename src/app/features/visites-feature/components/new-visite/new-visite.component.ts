@@ -4,6 +4,9 @@ import { VisiteService } from '../../services/visite.service';
 import { Visite } from '../../models/visite.model';
 import { PartieCommune } from '../../models/partieCommune.model';
 import { PartieSpecialise } from '../../models/partieSpecialise.model';
+import { interval } from 'rxjs';
+import { categoriesPartieCommune } from 'src/app/features/categories-feature/utils/categorie-partie-commune.data';
+import { categoriesPartieSpecialise } from 'src/app/features/categories-feature/utils/categorie-partie-specialise.data';
 
 @Component({
   selector: 'app-new-visite',
@@ -12,152 +15,55 @@ import { PartieSpecialise } from '../../models/partieSpecialise.model';
 })
 export class NewVisiteComponent {
   status = false;
-  showCategorieItems =false ; 
-  showCategories = true ; 
+  showCategorieItems = false;
+  showCategories = true;
+  categorieUrl !: string;
   categorieName !: string;
 
-  listCategories: any = [
-    {
-      name : "Allergie" , 
-      url : "allergies",
-      count : 20,
-      iconName : "bx bxs-calendar-check"
-    },
-    {
-      name : "Diagnostics connus" , 
-      url : "diagnostics",
-      count : 23,
-      iconName : "bx bxs-group"
-    },
-    {
-      name : "Médication en cours" , 
-      url : "medication", 
-      count : 22, 
-      iconName : "bx bx-pyramid"
-    },
-    {
-      name : "Grossesse pour les femmes" , 
-      url : "medication", 
-      count : 212, 
-      iconName : "bx bx-pyramid"
-    },
-    {
-      name : "Spécificité" , 
-      url : "specificite", 
-      count : 212, 
-      iconName : "bx bx-select-multiple"
-    }
-  ];
+  listCategories: any = categoriesPartieCommune;
 
-  idPatient !: number ; 
-  constructor(private route : ActivatedRoute , private visiteService : VisiteService){
-     const newVisite : Visite = new Visite(
-      null , 
+  idPatient !: number;
+
+  constructor(private route: ActivatedRoute, private visiteService: VisiteService) {
+    const newVisite: Visite = new Visite(
+      null,
       new Date(),
-      new PartieCommune([],[],[],[]),
-      new PartieSpecialise([],[],[],[],[],[])
-     ) ;
-     this.visiteService.setNewVisite(newVisite);
+      new PartieCommune([], [], [], []),
+      new PartieSpecialise([], [], [], [], [], [])
+    );
+    this.visiteService.setNewVisite(newVisite);
   }
 
-  ngOnInit(){
-      this.idPatient = this.route.snapshot.params['id']
+  ngOnInit() {
+    this.idPatient = this.route.snapshot.params['id']
   }
 
- 
+  
 
-addToggle()
-{
-  this.status = !this.status;       
-}
-activeLink: string = 'PartieCommune';
+
+  addToggle() {
+    this.status = !this.status;
+  }
+  activeLink: string = 'partieCommune';
 
   handleClick(link: string): void {
+    this.showCategories = true;
     this.activeLink = link;
-    if(link == "PC"){
-      this.activeLink = 'PartieCommune';
-      this.listCategories = [
-        {
-          name : "Allergie" , 
-          url : "allergies",
-          count : 20,
-          iconName : "bx bxs-calendar-check"
-        },
-        {
-          name : "Diagnostics connus" , 
-          url : "diagnostics",
-          count : 23,
-          iconName : "bx bxs-group"
-        },
-        {
-          name : "Médication en cours" , 
-          url : "medication", 
-          count : 22, 
-          iconName : "bx bx-pyramid"
-        },
-        {
-          name : "Grossesse pour les femmes" , 
-          url : "medication", 
-          count : 212, 
-          iconName : "bx bx-pyramid"
-        },
-        {
-          name : "Spécificité" , 
-          url : "specificite", 
-          count : 212, 
-          iconName : "bx bx-select-multiple"
-        }
-      ]
+    if (link == "PC") {
+      this.activeLink = 'partieCommune';
+      this.listCategories = categoriesPartieCommune;
     }
-    else if(link == "PS"){
-      this.activeLink = 'PartieSpécialisée';
-      this.listCategories = [
-        {
-          name: 'Anamnese',
-          url : 'anamnese',
-          count: 12,
-          iconName : "bx bxs-calendar-check"
-        },
-        {
-          name: 'Examen clinique',
-          url : 'exemanClinique',
-          count: 12,
-          iconName : "bx bxs-group"
-        },
-        {
-          name: 'Prescription diagnostic',
-          url : 'PrescriptionDiagnostique',
-          count: 33,
-          iconName : "bx bx-pyramid"
-        },
-        {
-          name: 'Diagnostic niveau supérieur',
-          url : 'diagnostiqueNiveauSuperieur',
-          count: 12,
-          iconName : "bx bx-pyramid"
-        },
-        {
-          name: 'Prescription thérapeutique',
-          url : 'prescriptionTherapeutique',
-          count: 34,
-          iconName : "bx bx-select-multiple"
-        },
-        {
-          name: 'Surveillance',
-          url : 'surveillance',
-          count: 34,
-          iconName : "bx bx-select-multiple"
-        },
-
-      ]
+    else if (link == "PS") {
+      this.activeLink = 'partieSpecialise';
+      this.listCategories = categoriesPartieSpecialise;
     }
   }
 
-
-  handleSelectCategorie(categorieName : string) {
-      this.showCategorieItems = true ; 
-      this.showCategories = false ;
-      this.categorieName = categorieName;
+  handleSelectCategorie(categorieUrl: string, categorieName: string) {
+    this.showCategorieItems = true;
+    this.showCategories = false;
+    this.categorieUrl = categorieUrl;
+    this.categorieName = categorieName;
   }
 
 }

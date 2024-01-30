@@ -52,8 +52,8 @@
         <div class="navigation-profile-card">
             
          <div class="topnav">
-            <a (click)="handleClick('PC')" [class.active]="activeLink === 'PartieCommun'">Partie Commune</a>
-            <a (click)="handleClick('PS')" [class.active]="activeLink === 'PartieSpécialisée'">Partie Specialise</a>
+            <a (click)="handleClick('PC')" [class.active]="activeLink === 'partieCommune'">Partie Commune</a>
+            <a (click)="handleClick('PS')" [class.active]="activeLink === 'partieSpecialise'">Partie Specialise</a>
           </div>
     </div>
   </div>
@@ -62,13 +62,9 @@
   
   <!-- boxes content  -->
   <div class="boxes" *ngIf="showCategories" >
-    <div class="navigation-Categories" >
-        <div class="topnav-categories"  >
-          <a *ngFor="let category of listCategories" (click)="handleClick('PC')" [class.active]="activeLink === 'PC'">Partie Commune</a>
-        </div>
-      </div>
+    
   <ul class="box-info">
-    <li *ngFor="let category of listCategories" (click) = "handleSelectCategorie(category.url)">
+    <li *ngFor="let category of listCategories" (click) = "handleSelectCategorie(category.url,category.name )">
       <i class={{category.iconName}}></i>
       <span class="text">
         <h3>{{ category.count }}</h3>
@@ -78,7 +74,7 @@
   </ul>
   </div>
   <div class="categorie-items" *ngIf="!showCategories">
-    <app-categorie-selection-form [categorieName]="categorieName"></app-categorie-selection-form>
+    <app-categorie-selection-form [categorieName]="categorieName" [categorieUrl]="categorieUrl" [listCategories]="listCategories" ></app-categorie-selection-form>
   </div>
   </main>
   </section>

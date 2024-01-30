@@ -1,9 +1,16 @@
 <section id="content">
   <main>
+
+    <div class="navigation-Categories" >
+      <div class="topnav-categories"  >
+        <a *ngFor="let category of listCategories" (click)="handleClickCategorie(category.name , category.url)" [class.active]="categorieActiveLink === category.name">{{category.name}}</a>
+      </div>
+    </div>
+    
     <div class="table-data">
       <div class="order">
         <div class="head">
-          <h3>Recent Orders</h3>
+          <h3>Les élements de {{categorieName}}</h3>
           <i class='bx bx-search' ></i>
           <i class='bx bx-filter' ></i>
         </div>
@@ -12,7 +19,7 @@
           <div class="ships-container">
             <div>
               <mat-chip-listbox [(ngModel)]="selectedItem" multiple  (change)="toggleSelection()"  >
-                <mat-chip-option *ngFor="let item of listItems" [value]="item">
+                <mat-chip-option *ngFor="let item of listItems" [value]="item" [selected]="isSelected(item)">
                   {{ item.name }}
                 </mat-chip-option>
               </mat-chip-listbox>
@@ -23,7 +30,7 @@
       </div>
       <div class="todo">
         <div class="head">
-          <h3>Selected ships</h3>
+          <h3>Les élements séléctionnées</h3>
           <i class='bx bx-plus' ></i>
           <i class='bx bx-filter' ></i>
         </div>

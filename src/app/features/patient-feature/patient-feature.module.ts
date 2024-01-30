@@ -6,7 +6,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { PatientService } from './services/patient.service';
 import { ListPatientComponent } from './components/list-patient/list-patient.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DossierPatientComponent } from './components/dossier-patient/dossier-patient.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -14,7 +13,6 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AddPatientFormComponent,
     ListPatientComponent,
-    DossierPatientComponent,
   ],
   imports: [
     CommonModule,

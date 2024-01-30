@@ -1,0 +1,49 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 1.5rem;
+  }
+
+  .section {
+    margin-bottom: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .card {
+    background-color: #ebf8ff;
+    padding: 1rem;
+  }
+
+  .card h3 {
+    font-weight: 600;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .button {
+    background-color: #e53e3e;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+  }

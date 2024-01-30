@@ -11,7 +11,8 @@ import { CategorieService } from '../../service/categorie.service';
 })
 export class CategorieDetailComponent {
 
-  categorieName!: string;
+  categorieUrl!: string;
+  categorieName!:string ; 
   listItems !: any[];
 
   constructor(private route : ActivatedRoute , 
@@ -20,12 +21,14 @@ export class CategorieDetailComponent {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.categorieName = params['name'];
+      this.categorieUrl = params['name'];
     });
 
-    console.log(this.categorieName)
+    this.categorieName = this.categorieUrl.split("/")[1];
 
-    this.categorieService.getCategories(this.categorieName).subscribe(
+    console.log(this.categorieUrl)
+
+    this.categorieService.getCategories(this.categorieUrl).subscribe(
       (data)=> {
         console.log(data);
           this.listItems = data ; 
@@ -38,7 +41,7 @@ export class CategorieDetailComponent {
 
   deleteItem(id : any){
     if(confirm("Are you sure you want to delete this patient?")) {
-      this.categorieService.deleteCategorie(this.categorieName , id).subscribe(
+      this.categorieService.deleteCategorie(this.categorieUrl , id).subscribe(
         () => {
           console.log(`Patient with id=${id} deleted.`);
           this.listItems = this.listItems.filter((item)=>item.id != id)
@@ -51,8 +54,8 @@ export class CategorieDetailComponent {
   }
 
   handleAddItemsToCategorie(listNewItems : any[]){
-    console.log(this.categorieName);
-    this.categorieService.addCategorieItems(this.categorieName ,listNewItems ).subscribe(
+    console.log(this.categorieUrl);
+    this.categorieService.addCategorieItems(this.categorieUrl ,listNewItems ).subscribe(
       (data) => {
          console.log(data)
           listNewItems.forEach((newItem , index)=>{

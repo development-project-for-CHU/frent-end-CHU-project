@@ -5,13 +5,15 @@ import { DossierPatientComponent } from './components/dossier-patient/dossier-pa
 import { RouterModule } from '@angular/router';
 import { NewVisiteComponent } from './components/new-visite/new-visite.component';
 import { CategorieSelectionFormComponent } from './components/categorie-selection-form/categorie-selection-form.component';
-import {MatChipsModule}  from '@angular/material/chips'
+import {MatChipsModule}  from '@angular/material/chips';
+import { ReportComponent } from './report/report.component'
 
 @NgModule({
   declarations: [
     DossierPatientComponent,
     NewVisiteComponent,
-    CategorieSelectionFormComponent
+    CategorieSelectionFormComponent,
+    ReportComponent
   ],
   imports: [
     CommonModule,

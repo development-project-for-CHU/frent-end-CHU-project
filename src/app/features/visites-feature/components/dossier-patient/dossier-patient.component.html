@@ -64,7 +64,7 @@
                 <td>{{ visite.getId()}}</td>
                 <td>{{ visite.getDateVisite() | date:'dd/MM/yyyy'  }}</td>
                 <td class="table-button-cell">
-                  <button mat-icon-button class="edit-button" (click)="editVisite(visite)">
+                  <button mat-icon-button class="edit-button" (click)="openFormDialog">
                     <i class="fa fa-edit"></i>
                   </button>
                   <button mat-icon-button class="delete-button" (click)="deleteVisite(visite.getId())">

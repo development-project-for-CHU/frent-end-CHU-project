@@ -12,56 +12,27 @@ import { Genre } from '../../enums/genre.enum';
   styleUrls: ['./list-patient.component.css']
 })
 export class ListPatientComponent implements OnInit {
-  patients: Patient[] = [
-     new Patient(
-      '1234125',                  // iip: A unique identifier or null
-      'John',                   // nom: First name
-      'Doe',                    // prenom: Last name
-      'AB123456',               // cin: National ID number or similar
-      '+1234567890',            // numTel: Phone number
-      new Date(1980, 1, 1),     // dateNaissance: Date of birth (Year, Month, Day) - Month is 0-indexed
-      Genre.HOMME,                // sexe: Enum value for gender
-      '123 Main St, Anytown' ,   // adresse: Address
-      '123 Main St, Anytown' ,   // adresse: Address
-      "123456"
-    ),
-    new Patient(
-      '1232345',                  // iip: A unique identifier or null
-      'John',                   // nom: First name
-      'Doe',                    // prenom: Last name
-      'AB123456',               // cin: National ID number or similar
-      '+1234567890',            // numTel: Phone number
-      new Date(1980, 1, 1),     // dateNaissance: Date of birth (Year, Month, Day) - Month is 0-indexed
-      Genre.HOMME,                // sexe: Enum value for gender
-      '123 Main St, Anytown' ,   // adresse: Address
-      '123 Main St, Anytown' ,   // adresse: Address
-      "123456"
-    ),
-    new Patient(
-      '1232345',                  // iip: A unique identifier or null
-      'John',                   // nom: First name
-      'Doe',                    // prenom: Last name
-      'AB123456',               // cin: National ID number or similar
-      '+1234567890',            // numTel: Phone number
-      new Date(1980, 1, 1),     // dateNaissance: Date of birth (Year, Month, Day) - Month is 0-indexed
-      Genre.HOMME,                // sexe: Enum value for gender
-      '123 Main St, Anytown' ,   // adresse: Address
-      '123 Main St, Anytown' ,   // adresse: Address
-      "123456"
-    )
-  ];
+  patients: Patient[] = [];
+  ///====================>  for search logic : 
+  searchText: string = '';
+  searchBy: string = 'iip'; // default search by ID
+
+  filteredPatient = this.patients;
+
 
   constructor(private patientService: PatientService , private dialog : MatDialog) {}
 
   ngOnInit(): void {
     this.getPatients();
+    console.log("filteredPatient" , this.filteredPatient)
   }
 
   getPatients(): void {
     this.patientService.getPatients().subscribe(
       (data) => {
-        console.log(data)
+        console.log("list patient ",data)
         this.patients = data;
+        this.filteredPatient = this.patients;
       },
       (error) => {
         console.error('There was an error retrieving patients!', error);
@@ -111,12 +82,7 @@ export class ListPatientComponent implements OnInit {
 
 
 
-  ///====================> search logic : 
-  searchText: string = '';
-  searchBy: string = 'iip'; // default search by ID
-
-  filteredPatient = this.patients;
-
+  
   onSearch() {
     if (this.searchBy === 'iip') {
       this.filteredPatient = this.patients.filter(item => item.ipp.toString() === this.searchText);

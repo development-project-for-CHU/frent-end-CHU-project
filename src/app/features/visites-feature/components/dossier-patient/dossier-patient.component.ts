@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Visite } from '../../models/visite.model';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog'; 
+import { ReportComponent } from '../../report/report.component';
 
 @Component({
   selector: 'app-dossier-patient',
@@ -11,7 +13,9 @@ export class DossierPatientComponent {
   visites: Visite[] = [];
 
  idPatient !: number ; 
-  constructor(private route : ActivatedRoute){}
+  constructor(private route : ActivatedRoute, private dialog: MatDialog){}
+
+
 
   ngOnInit(){
       this.idPatient = this.route.snapshot.params['id']
@@ -19,8 +23,20 @@ export class DossierPatientComponent {
   }
 
 
- openFormDialog() {
-   // Implement your logic to open the form dialog for adding a visite
+  openFormDialog(): void {
+    const dialogRef = this.dialog.open(ReportComponent, {
+      // you can pass data to your dialog here
+      data: { /* some data for creating or updating a user */ },
+      width : "60%",
+      height: "90%",
+      panelClass: 'custom-dialog-container' 
+      
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.getUsers(); // Refresh the list whether there's a result or not
+    });
  }
 
  editVisite(visite: Visite) {
