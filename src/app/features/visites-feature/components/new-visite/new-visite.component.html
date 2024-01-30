@@ -61,7 +61,12 @@
   
   
   <!-- boxes content  -->
-  <div class="boxes" *ngIf="showCategories"  >
+  <div class="boxes" *ngIf="showCategories" >
+    <div class="navigation-Categories" >
+        <div class="topnav-categories"  >
+          <a *ngFor="let category of listCategories" (click)="handleClick('PC')" [class.active]="activeLink === 'PC'">Partie Commune</a>
+        </div>
+      </div>
   <ul class="box-info">
     <li *ngFor="let category of listCategories" (click) = "handleSelectCategorie(category.url)">
       <i class={{category.iconName}}></i>

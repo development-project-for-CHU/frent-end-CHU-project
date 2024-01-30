@@ -26,7 +26,7 @@
                   <p>MRN189728 | Chirurgie Maxillo-faciale</p>
               </div>
               <div class="stat">
-                  <span class="stat-value">14</span>
+                  <span class="stat-value">12</span>
                   <span class="stat-label">Visites</span>
               </div>
               <div class="stat">
@@ -46,6 +46,7 @@
           <a (click)="handleClick('PS')" [class.active]="activeLink === 'PS'">Partie Specialise</a>
         </div>
   </div>
+
 </div>
 
 
@@ -53,7 +54,9 @@
 <!-- boxes content  -->
 <div class="boxes" *ngIf="showCategories" >
 <ul class="box-info">
+    
   <li *ngFor="let category of listCategories" (click) = "handleSelectCategorie(category.name)">
+    
     <i class={{category.iconName}}></i>
     <span class="text">
       <h3>{{ category.count }}</h3>
