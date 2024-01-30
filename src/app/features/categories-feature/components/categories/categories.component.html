@@ -15,10 +15,17 @@
       </div>
     </div>
     <!-- boxes content  -->
+    <div class="navigation-profile-card">
+      <div class="topnav">
+        <a (click)="handleClick('PC')" [class.active]="activeLink === 'PC'">Partie Commune</a>
+        <a (click)="handleClick('PS')" [class.active]="activeLink === 'PS'">Partie Specialise</a>
+      </div>
+    </div>
+
     <div class="boxes">
       <ul class="box-info">
-        <li *ngFor="let categorie of ListCategoriesCommune" [routerLink]="['/categories-detail', categorie.url]">
-          <i [class]="categorie.iconName" ></i>
+        <li *ngFor="let categorie of listCategories" [routerLink]="['/categories-detail', categorie.url]">
+          <i [class]="categorie.iconName"></i>
           <span class="text">
             <h3>{{categorie.count}}</h3>
             <p>{{categorie.name}}</p>

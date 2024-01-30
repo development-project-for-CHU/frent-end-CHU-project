@@ -5,6 +5,24 @@
     max-height: calc(100vh - 56px);
     overflow-y: auto;
   }
+  #content main .navigation-profile-card {
+    border-radius: 25;
+    width: 100%; /* Slightly less than profile-card to center it */
+    margin: 0 auto; /* Centers the navigation card horizontally */
+
+    /* Rest of your styles */
+  }
+  #content main .topnav{
+    display: flex; /* Added to center the children */
+    justify-content: space-around;
+    border-radius: 25px 25px;
+  }
+
+
+  
+
+
+
   #content main .head-title {
     display: flex;
     align-items: center;
@@ -58,7 +76,6 @@
     padding: 0px 12px 0px 12px;
     margin: 0px auto;
     width: 90%;
-    
 } */
 
 .profile-header {
@@ -160,13 +177,12 @@
     /* No change needed */
 }
 
-.navigation-profile-card {
+/* .navigation-profile-card {
     border-radius: 0;
-    width: 100%; /* Slightly less than profile-card to center it */
-    margin: 0 auto; /* Centers the navigation card horizontally */
-    /* Rest of your styles */
+    width: 100%;
+    margin: 0 auto;
 }
-
+ */
 
 
 

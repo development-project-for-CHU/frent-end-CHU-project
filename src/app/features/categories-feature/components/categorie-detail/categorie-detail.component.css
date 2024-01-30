@@ -32,7 +32,7 @@
   #content main .head-title .left .breadcrumb li a.active {
     color: var(--blue);
   }
-  #content main .head-title .btn-download {
+  /* #content main .head-title .btn-download {
     height: 36px;
     padding: 0 16px;
     border-radius: 36px;
@@ -43,7 +43,28 @@
     align-items: center;
     grid-gap: 10px;
     font-weight: 500;
-  }
+  } */
+  #content main .head-title .btn-download,
+#content main .head-title .btn-download input[type="file"] {
+  height: 36px;
+  width: 150px;
+  padding: 0 16px;
+  border-radius: 36px;
+  background: var(--blue);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  font-weight: 500;
+}
+
+#content main .head-title .btn-download input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
   
   
   

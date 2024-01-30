@@ -10,6 +10,8 @@ export class DossierPatientComponent {
   showCategorieItems =false ; 
   showCategories = true ; 
   categorieName !: string;
+  activeLink: string = 'PC';
+
 
   listCategories: any = [
     {
@@ -44,12 +46,11 @@ addToggle()
 {
   this.status = !this.status;       
 }
-activeLink: string = 'PartieCommune';
 
   handleClick(link: string): void {
     this.activeLink = link;
     if(link == "PC"){
-      this.activeLink = 'PartieCommune';
+      this.activeLink = 'PC';
       this.listCategories = [
         {
           name : "Allergie" , 
@@ -79,7 +80,7 @@ activeLink: string = 'PartieCommune';
       ]
     }
     else if(link == "PS"){
-      this.activeLink = 'PartieSpécialisée';
+      this.activeLink = 'PS';
       this.listCategories = [
         {
           name: 'Anamnese',
