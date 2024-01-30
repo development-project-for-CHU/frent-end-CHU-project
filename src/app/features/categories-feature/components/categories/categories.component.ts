@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CategoriesComponent {
   activeLink: string = 'PC';
-
+  partieSelectionne : string = "Partie Commune";
 
   listCategories : any[] = [
     {
@@ -48,36 +48,38 @@ export class CategoriesComponent {
 
   handleClick(link: string): void {
     this.activeLink = link;
+    
     if(link == "PC"){
       this.activeLink = 'PC';
+      this.partieSelectionne = "Partie Commune"
       this.listCategories = [
         {
           name : "Allergie" , 
-          url : "allergies",
+          url : "partieCommune/allergies",
           count : 20,
           iconName : "bx bxs-calendar-check"
         },
         {
           name : "Diagnostics connus" , 
-          url : "diagnostics",
+          url : "partieCommune/diagnostics",
           count : 23,
           iconName : "bx bxs-group"
         },
         {
           name : "Médication en cours" , 
-          url : "medication", 
+          url : "partieCommune/medication", 
           count : 22, 
           iconName : "bx bx-pyramid"
         },
         {
           name : "Grossesse pour les femmes" , 
-          url : "medication", 
+          url : "partieCommune/medication", 
           count : 212, 
           iconName : "bx bx-pyramid"
         },
         {
           name : "Spécificité" , 
-          url : "specificite", 
+          url : "partieCommune/specificite", 
           count : 212, 
           iconName : "bx bx-select-multiple"
         }
@@ -85,40 +87,41 @@ export class CategoriesComponent {
     }
     else if(link == "PS"){
       this.activeLink = 'PS';
+      this.partieSelectionne = "Partie Spécialisée"
       this.listCategories = [
         {
           name: 'Anamnese',
-          url : 'anamnese',
+          url : 'partieSpecialise\/anamnese',
           count: 12,
           iconName : "bx bxs-calendar-check"
         },
         {
           name: 'Examen clinique',
-          url : 'exemanClinique',
+          url : 'partieSpecialise\/exemanClinique',
           count: 12,
           iconName : "bx bxs-group"
         },
         {
           name: 'Prescription diagnostic',
-          url : 'PrescriptionDiagnostique',
+          url : 'partieSpecialise\/PrescriptionDiagnostique',
           count: 33,
           iconName : "bx bx-pyramid"
         },
         {
           name: 'Diagnostic niveau supérieur',
-          url : 'diagnostiqueNiveauSuperieur',
+          url : 'partieSpecialise\/diagnostiqueNiveauSuperieur',
           count: 12,
           iconName : "bx bx-pyramid"
         },
         {
           name: 'Prescription thérapeutique',
-          url : 'prescriptionTherapeutique',
+          url : 'partieSpecialise\/prescriptionTherapeutique',
           count: 34,
           iconName : "bx bx-select-multiple"
         },
         {
           name: 'Surveillance',
-          url : 'surveillance',
+          url : 'partieSpecialise\/surveillance',
           count: 34,
           iconName : "bx bx-select-multiple"
         },

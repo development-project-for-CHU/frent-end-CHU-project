@@ -146,6 +146,10 @@
 
 } */
 
+.navigation-profile-card  .topnav a {
+  cursor: pointer;
+}
+
 .navbar-list{
     display: flex;
     justify-content: space-between;

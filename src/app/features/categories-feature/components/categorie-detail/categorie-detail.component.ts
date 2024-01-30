@@ -23,6 +23,8 @@ export class CategorieDetailComponent {
       this.categorieName = params['name'];
     });
 
+    console.log(this.categorieName)
+
     this.categorieService.getCategories(this.categorieName).subscribe(
       (data)=> {
         console.log(data);

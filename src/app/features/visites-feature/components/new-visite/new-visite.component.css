@@ -142,7 +142,6 @@
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center children horizontally */
     margin: 0 auto;
-    width: 90%;
   }
   
   .profile-card {
@@ -166,14 +165,15 @@
   }
   
   
-  
+  .box-info {
+    padding-left:0;
+  }
   
   
   
   
   /* boxes content */
   .boxes{
-    width: 95%;
     cursor: pointer;
   }
   #content main .box-info {

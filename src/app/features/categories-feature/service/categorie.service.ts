@@ -14,7 +14,7 @@ export class CategorieService {
 
 
   constructor(private http: HttpClient) {
-    this.apiUrl = `${environment.apiUrl}/categories/partieCommune`;
+    this.apiUrl = `${environment.apiUrl}/categories`;
   }
 
   // Obtenir toutes les catégories

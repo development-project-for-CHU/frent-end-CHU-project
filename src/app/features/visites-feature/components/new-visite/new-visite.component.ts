@@ -114,31 +114,37 @@ activeLink: string = 'PartieCommune';
       this.listCategories = [
         {
           name: 'Anamnese',
+          url : 'anamnese',
           count: 12,
           iconName : "bx bxs-calendar-check"
         },
         {
           name: 'Examen clinique',
+          url : 'exemanClinique',
           count: 12,
           iconName : "bx bxs-group"
         },
         {
           name: 'Prescription diagnostic',
+          url : 'PrescriptionDiagnostique',
           count: 33,
           iconName : "bx bx-pyramid"
         },
         {
           name: 'Diagnostic niveau supérieur',
+          url : 'diagnostiqueNiveauSuperieur',
           count: 12,
           iconName : "bx bx-pyramid"
         },
         {
           name: 'Prescription thérapeutique',
+          url : 'prescriptionTherapeutique',
           count: 34,
           iconName : "bx bx-select-multiple"
         },
         {
           name: 'Surveillance',
+          url : 'surveillance',
           count: 34,
           iconName : "bx bx-select-multiple"
         },

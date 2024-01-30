@@ -1,14 +1,16 @@
+import { Categorie } from "../../categories-feature/model/categorie.model";
+
 export class PartieCommune {
-    private allergies: number[];
-    private diagnostiqueConnus: number[];
-    private medicamentEnCours: number[];
-    private specificite: number[];
+    private allergies: Categorie[];
+    private diagnostiqueConnus: Categorie[];
+    private medicamentEnCours: Categorie[];
+    private specificite: Categorie[];
   
     constructor(
-      allergiesList: number[],
-      diagnostiqueConnueList: number[],
-      medicamentEnCoursList: number[],
-      specificiteList: number[]
+      allergiesList: Categorie[],
+      diagnostiqueConnueList: Categorie[],
+      medicamentEnCoursList: Categorie[],
+      specificiteList: Categorie[]
     ) {
       this.allergies = allergiesList;
       this.diagnostiqueConnus = diagnostiqueConnueList;
@@ -17,36 +19,36 @@ export class PartieCommune {
     }
   
     // Getters
-    getAllergies(): number[] {
+    getAllergies(): Categorie[] {
       return this.allergies;
     }
   
-    getDiagnostiqueConnus(): number[] {
+    getDiagnostiqueConnus(): Categorie[] {
       return this.diagnostiqueConnus;
     }
   
-    getMedicamentEnCours(): number[] {
+    getMedicamentEnCours(): Categorie[] {
       return this.medicamentEnCours;
     }
   
-    getSpecificite(): number[] {
+    getSpecificite(): Categorie[] {
       return this.specificite;
     }
   
     // Setters
-    setAllergies(allergiesList: number[]): void {
+    setAllergies(allergiesList: Categorie[]): void {
       this.allergies = allergiesList;
     }
   
-    setDiagnostiqueConnus(diagnostiqueConnusList: number[]): void {
+    setDiagnostiqueConnus(diagnostiqueConnusList: Categorie[]): void {
       this.diagnostiqueConnus = diagnostiqueConnusList;
     }
   
-    setMedicamentEnCours(medicamentEnCoursList: number[]): void {
+    setMedicamentEnCours(medicamentEnCoursList: Categorie[]): void {
       this.medicamentEnCours = medicamentEnCoursList;
     }
   
-    setSpecificite(specificiteList: number[]): void {
+    setSpecificite(specificiteList: Categorie[]): void {
       this.specificite = specificiteList;
     }
   }

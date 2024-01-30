@@ -11,7 +11,7 @@
 
           <div class="ships-container">
             <div>
-              <mat-chip-listbox [(ngModel)]="selectedItem" multiple   (change)="toggleSelection()">
+              <mat-chip-listbox [(ngModel)]="selectedItem" multiple  (change)="toggleSelection()"  >
                 <mat-chip-option *ngFor="let item of listItems" [value]="item">
                   {{ item.name }}
                 </mat-chip-option>

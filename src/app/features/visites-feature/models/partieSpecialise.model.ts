@@ -1,18 +1,20 @@
+import { Categorie } from "../../categories-feature/model/categorie.model";
+
 export class PartieSpecialise {
-    private listAnamnese: number[];
-    private listExamenClinique: number[];
-    private listPrescriptionDiagnostique: number[];
-    private listDiagnostiqueNiveauSuperieur: number[];
-    private listPrescriptionTherapeutique: number[];
-    private listSurveillance: number[];
+    private listAnamnese: Categorie[];
+    private listExamenClinique: Categorie[];
+    private listPrescriptionDiagnostique: Categorie[];
+    private listDiagnostiqueNiveauSuperieur: Categorie[];
+    private listPrescriptionTherapeutique: Categorie[];
+    private listSurveillance: Categorie[];
   
     constructor(
-      listAnamnese: number[],
-      listExamenClinique: number[],
-      listPrescriptionDiagnostique: number[],
-      listDiagnostiqueNiveauSuperieur: number[],
-      listPrescriptionTherapeutique: number[],
-      listSurveillance: number[]
+      listAnamnese: Categorie[],
+      listExamenClinique: Categorie[],
+      listPrescriptionDiagnostique: Categorie[],
+      listDiagnostiqueNiveauSuperieur: Categorie[],
+      listPrescriptionTherapeutique: Categorie[],
+      listSurveillance: Categorie[]
     ) {
       this.listAnamnese = listAnamnese;
       this.listExamenClinique = listExamenClinique;
@@ -23,52 +25,52 @@ export class PartieSpecialise {
     }
   
     // Getters
-    getListAnamnese(): number[] {
+    getListAnamnese(): Categorie[] {
       return this.listAnamnese;
     }
   
-    getListExamenClinique(): number[] {
+    getListExamenClinique(): Categorie[] {
       return this.listExamenClinique;
     }
   
-    getListPrescriptionDiagnostique(): number[] {
+    getListPrescriptionDiagnostique(): Categorie[] {
       return this.listPrescriptionDiagnostique;
     }
   
-    getListDiagnostiqueNiveauSuperieur(): number[] {
+    getListDiagnostiqueNiveauSuperieur(): Categorie[] {
       return this.listDiagnostiqueNiveauSuperieur;
     }
   
-    getListPrescriptionTherapeutique(): number[] {
+    getListPrescriptionTherapeutique(): Categorie[] {
       return this.listPrescriptionTherapeutique;
     }
   
-    getListSurveillance(): number[] {
+    getListSurveillance(): Categorie[] {
       return this.listSurveillance;
     }
   
     // Setters
-    setListAnamnese(listAnamnese: number[]): void {
+    setListAnamnese(listAnamnese: Categorie[]): void {
       this.listAnamnese = listAnamnese;
     }
   
-    setListExamenClinique(listExamenClinique: number[]): void {
+    setListExamenClinique(listExamenClinique: Categorie[]): void {
       this.listExamenClinique = listExamenClinique;
     }
   
-    setListPrescriptionDiagnostique(listPrescriptionDiagnostique: number[]): void {
+    setListPrescriptionDiagnostique(listPrescriptionDiagnostique: Categorie[]): void {
       this.listPrescriptionDiagnostique = listPrescriptionDiagnostique;
     }
   
-    setListDiagnostiqueNiveauSuperieur(listDiagnostiqueNiveauSuperieur: number[]): void {
+    setListDiagnostiqueNiveauSuperieur(listDiagnostiqueNiveauSuperieur: Categorie[]): void {
       this.listDiagnostiqueNiveauSuperieur = listDiagnostiqueNiveauSuperieur;
     }
   
-    setListPrescriptionTherapeutique(listPrescriptionTherapeutique: number[]): void {
+    setListPrescriptionTherapeutique(listPrescriptionTherapeutique: Categorie[]): void {
       this.listPrescriptionTherapeutique = listPrescriptionTherapeutique;
     }
   
-    setListSurveillance(listSurveillance: number[]): void {
+    setListSurveillance(listSurveillance: Categorie[]): void {
       this.listSurveillance = listSurveillance;
     }
   }
