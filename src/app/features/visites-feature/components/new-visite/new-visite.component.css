@@ -28,11 +28,9 @@
   }
   #content main .head-title .left .breadcrumb li a {
     color: var(--dark-grey);
-    pointer-events: none;
   }
   #content main .head-title .left .breadcrumb li a.active {
     color: var(--blue);
-    pointer-events: unset;
   }
   #content main .head-title .btn-download {
     height: 36px;
@@ -47,8 +45,8 @@
     font-weight: 500;
   }
   
-
-/* .profile-card {
+  
+  /* .profile-card {
     background-color: #3C91E6;
     color: white;
     border-radius: 8px;
@@ -59,16 +57,16 @@
     margin: 0px auto;
     width: 90%;
     
-} */
-
-.profile-header {
+  } */
+  
+  .profile-header {
     padding: 16px;
     text-align: left;
     position: relative;
-
-}
-
-.profile-header::after {
+  
+  }
+  
+  .profile-header::after {
     content: '';
     position: absolute;
     right: 0; /* Align to the right of the profile header */
@@ -76,78 +74,78 @@
     bottom: 0; /* Stretch to the bottom */
     width: 2px; /* Width of the line */
     background-color: #ffffff; /* Color of the line */
-}
-
-.profile-header h1 {
+  }
+  
+  .profile-header h1 {
     margin: 0;
     font-size: 24px; /* Larger font size for name */
     font-weight: bold;
-}
-
-.profile-header p {
+  }
+  
+  .profile-header p {
     margin: 0;
     font-size: 14px; /* Smaller font size for details */
-}
-
-.profile-stats {
+  }
+  
+  .profile-stats {
     display: flex;
     justify-content: space-between;
     padding: 16px 0;
     background-color: #3C91E6; /* Same as the card background color */
     align-items: center;
     font-size: 24px; 
-}
-
-
-.stat {
+  }
+  
+  
+  .stat {
     display: flex; /* Use flexbox to align items */
     align-items: center; /* Align items vertically in the center */
     justify-content: center; /* Center the items horizontally */
-}
-
-
-.stat-value {
+  }
+  
+  
+  .stat-value {
     margin-right: 8px; /* Add some space between the value and label */
     font-size: 34px;
     font-weight: bold;
-}
-
-.stat-label {
+  }
+  
+  .stat-label {
     font-size: 14px;
-}
-
-/* .profile-component{
+  }
+  
+  /* .profile-component{
     margin: 0px auto;
     width: 90%;
-} */
-
-
-/* .navigation-profile-card{
+  } */
+  
+  
+  /* .navigation-profile-card{
     background-color: lightgray;
     border-radius: 0 0 10px 10px;
     width: 80%;
-
-} */
-
-.navbar-list{
+  
+  } */
+  
+  .navbar-list{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     cursor: pointer;
     
-}
-
-
-.profile-component {
+  }
+  
+  
+  .profile-component {
     display: flex; /* Added to center the children */
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center children horizontally */
     margin: 0 auto;
     width: 90%;
-}
-
-.profile-card {
+  }
+  
+  .profile-card {
     background-color: #3C91E6;
     color: white;
     border-radius: 8px 8px 0  0;
@@ -158,27 +156,27 @@
     margin: 0px auto; 
     width: 100%; /* Unchanged width */
     /* No change needed */
-}
-
-.navigation-profile-card {
+  }
+  
+  .navigation-profile-card {
     border-radius: 0;
     width: 100%; /* Slightly less than profile-card to center it */
     margin: 0 auto; /* Centers the navigation card horizontally */
     /* Rest of your styles */
-}
-
-
-
-
-
-
-
-/* boxes content */
-.boxes{
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* boxes content */
+  .boxes{
     width: 95%;
     cursor: pointer;
-}
-#content main .box-info {
+  }
+  #content main .box-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 24px;
@@ -202,11 +200,11 @@
     align-items: center;
     grid-gap: 24px;
     transition: transform 0.3s ease; /* Ajout d'une transition pour un effet plus doux */
-}
-
-#content main .box-info li:hover {
+  }
+  
+  #content main .box-info li:hover {
     transform: scale(1.05); /* Augmente légèrement la taille */
-}
+  }
   #content main .box-info li .bx {
     width: 80px;
     height: 80px;
@@ -237,6 +235,10 @@
     background: var(--light-orange);
     color: var(--orange);
   }
+  #content main .box-info li:nth-child(6) .bx {
+    background: var(--light-yellow);
+    color: var(--yellow);
+  }
   #content main .box-info li .text h3 {
     font-size: 24px;
     font-weight: 600;
@@ -246,15 +248,16 @@
     color: var(--dark);  
   }
   
-
-
+  
+  
   .topnav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     background-color: white;
     border-radius:  0 0 10px 10px ;
+  
     /* margin-top: 20px; */
-
+  
   }
   
   .topnav a {
@@ -264,6 +267,7 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    cursor: pointer;
     border-bottom: 3px solid transparent;
     transition:
       border-bottom 0.3s ease-in-out,
@@ -280,6 +284,7 @@
   .topnav a:hover {
     color: #39a7ff;
   }
+  
   .breadcrumb li {
     cursor: pointer;
   }

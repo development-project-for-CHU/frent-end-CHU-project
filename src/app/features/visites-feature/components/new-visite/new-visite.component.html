@@ -1,0 +1,79 @@
+<section id="content">
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Dossier patient</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a [routerLink]="['/patients']">Liste patients</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a [routerLink]="['/patients/dossier' , idPatient]">Dossier patient</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a [class]="{ 'active' : showCategories }" [routerLink]="null" (click)="showCategories=true" >Ajouter une nouvelle visite</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right' *ngIf="!showCategories"></i></li>
+                    <li  *ngIf="!showCategories"  [routerLink]="null" >
+                        <a class="active" >{{categorieName}}</a>
+                    </li>
+
+                </ul>
+            </div>
+            
+            
+        </div>
+    
+    <div class="profile-component">
+  
+    
+        <div class="profile-card">
+            <div class="profile-stats">
+                <div class="profile-header">
+                    <h1>AFRID MOUHSSINE</h1>
+                    <p>MRN189728 | Chirurgie Maxillo-faciale</p>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">14</span>
+                    <span class="stat-label">Visites</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">4</span>
+                    <span class="stat-label">Visites lors des 3 derniers mois</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">0</span>
+                    <span class="stat-label">Visites au service</span>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-profile-card">
+            
+         <div class="topnav">
+            <a (click)="handleClick('PC')" [class.active]="activeLink === 'PartieCommun'">Partie Commune</a>
+            <a (click)="handleClick('PS')" [class.active]="activeLink === 'PartieSpécialisée'">Partie Specialise</a>
+          </div>
+    </div>
+  </div>
+  
+  
+  
+  <!-- boxes content  -->
+  <div class="boxes" *ngIf="showCategories"  >
+  <ul class="box-info">
+    <li *ngFor="let category of listCategories" (click) = "handleSelectCategorie(category.url)">
+      <i class={{category.iconName}}></i>
+      <span class="text">
+        <h3>{{ category.count }}</h3>
+        <p>{{ category.name }}</p>
+      </span>
+    </li>
+  </ul>
+  </div>
+  <div class="categorie-items" *ngIf="!showCategories">
+    <app-categorie-selection-form [categorieName]="categorieName"></app-categorie-selection-form>
+  </div>
+  </main>
+  </section>

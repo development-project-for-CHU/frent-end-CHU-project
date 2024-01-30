@@ -5,12 +5,17 @@
             <h1>Gestion des catégories</h1>
             <ul class="breadcrumb">
               <li>
-                <a href="#">Categorie</a>
+                <a [routerLink]="['/categories']">Gestion des catégories</a>
+              </li>
+              <li><i class='bx bx-chevron-right'></i></li>
+              <li>
+                <a  [routerLink]="['/categories']">catégories</a>
               </li>
               <li><i class='bx bx-chevron-right' ></i></li>
               <li>
-                <a class="active" href="#">Motif de consultation</a>
+                <a class="active" href="#">{{categorieName}}</a>
               </li>
+
             </ul>
           </div>
           <a href="#" class="btn-download">
@@ -51,14 +56,14 @@
               <tbody>
                 <tr *ngFor="let item of listItems">
                   <td>
-                    <p>{{item.question}}</p>
+                    <p>{{item.name}}</p>
                   </td>
-                  <td>{{item.addedAt}}</td>
+                  <td>{{item.addedAt | date:'dd/MM/yyyy'}}</td>
                   <td class="table-button-cell">
                     <button mat-icon-button class="edit-button" >
                       <i class="fa fa-edit"></i>
                     </button>
-                    <button mat-icon-button class="delete-button">
+                    <button mat-icon-button class="delete-button" (click)="deleteItem(item.id)">
                       <i class="fa fa-trash"></i>
                     </button>
                   </td>                

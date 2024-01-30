@@ -5,12 +5,9 @@
         <h1>Gestion des patients</h1>
         <ul class="breadcrumb">
           <li>
-            <a href="#">Patients</a>
+            <a routerLink="/patients">Liste patients</a>
           </li>
           <li><i class='bx bx-chevron-right'></i></li>
-          <li>
-            <a class="active" href="#">Liste</a>
-          </li>
         </ul>
       </div>
       <a (click)="openFormDialog()" type="button" class="btn-download">
@@ -79,7 +76,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let patient of filteredPatient">
+            <tr *ngFor="let patient of filteredPatient" class="table-tr" [routerLink]="['dossier', patient.ipp]" >
               <td>
                 <img src="https://secure.gravatar.com/avatar/yourhash?s=100&d=identicon&r=g">
                 <p>{{ patient.nom }} {{ patient.prenom }} </p>
@@ -91,7 +88,7 @@
               <td>{{ patient.dateNaissance | date:'dd/MM/yyyy' }}</td>
               <td>{{ patient.genre  }}</td>
               <td class="table-button-cell">
-                <button mat-icon-button class="consulter-button" (click)="consulterPatient(patient)">
+                <button mat-icon-button class="consulter-button"  routerLink="/dossier" >
                   <i class="fas fa-sign-in-alt"></i>
                 </button>
                 <button mat-icon-button class="edit-button" (click)="editPatient(patient)">

@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatDialogModule} from '@angular/material/dialog';
-import { VisiteComponent } from './components/Visite/visite.component';
-import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+import { DossierPatientComponent } from './components/dossier-patient/dossier-patient.component';
+import { RouterModule } from '@angular/router';
+import { NewVisiteComponent } from './components/new-visite/new-visite.component';
+import { CategorieSelectionFormComponent } from './components/categorie-selection-form/categorie-selection-form.component';
+import {MatChipsModule}  from '@angular/material/chips'
 
 @NgModule({
   declarations: [
-    
-    VisiteComponent,
-   
+    DossierPatientComponent,
+    NewVisiteComponent,
+    CategorieSelectionFormComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule, 
     FormsModule,
-    MatDialogModule,
-    HttpClientModule,
-    
+    RouterModule,
+    MatChipsModule
   ],
   providers : []
 })

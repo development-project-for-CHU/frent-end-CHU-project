@@ -7,13 +7,14 @@ import { PatientService } from './services/patient.service';
 import { ListPatientComponent } from './components/list-patient/list-patient.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DossierPatientComponent } from './components/dossier-patient/dossier-patient.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AddPatientFormComponent,
     ListPatientComponent,
-    DossierPatientComponent
+    DossierPatientComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +22,7 @@ import { DossierPatientComponent } from './components/dossier-patient/dossier-pa
     FormsModule,
     MatDialogModule,
     HttpClientModule,
+    RouterModule
   ],
   providers : [PatientService]
 })

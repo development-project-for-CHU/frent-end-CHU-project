@@ -1,0 +1,39 @@
+<section id="content">
+  <main>
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Recent Orders</h3>
+          <i class='bx bx-search' ></i>
+          <i class='bx bx-filter' ></i>
+        </div>
+        <div>
+
+          <div class="ships-container">
+            <div>
+              <mat-chip-listbox [(ngModel)]="selectedItem" multiple   (change)="toggleSelection()">
+                <mat-chip-option *ngFor="let item of listItems" [value]="item">
+                  {{ item.name }}
+                </mat-chip-option>
+              </mat-chip-listbox>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="todo">
+        <div class="head">
+          <h3>Selected ships</h3>
+          <i class='bx bx-plus' ></i>
+          <i class='bx bx-filter' ></i>
+        </div>
+        <ul class="todo-list" *ngFor="let item of selectedItem">
+          <li class="completed">
+            <p>{{ item.name }}</p>
+            <i class='bx bx-dots-vertical-rounded' ></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</section>

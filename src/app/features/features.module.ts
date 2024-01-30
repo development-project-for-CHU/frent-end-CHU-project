@@ -4,10 +4,12 @@ import { FeaturesRoutingModule } from './features-routing.module';
 import { PatientFeatureModule } from './patient-feature/patient-feature.module';
 import { UserFeatureModule } from './user-feature/user-feature.module';
 import { CategoriesFeatureModule } from './categories-feature/categories-feature.module';
-import {VisiteFeatureModule} from './visites-feature/visite-feature.module'
+import { VisiteFeatureModule } from './visites-feature/visite-feature.module';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     FeaturesRoutingModule,
@@ -17,4 +19,4 @@ import {VisiteFeatureModule} from './visites-feature/visite-feature.module'
     VisiteFeatureModule
   ]
 })
-export class FeaturesModule { }
+export class FeaturesModule {}

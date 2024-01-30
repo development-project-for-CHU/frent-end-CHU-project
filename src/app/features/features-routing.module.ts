@@ -3,47 +3,45 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './analytics/components/dashboard/dashboard.component';
 import { ListPatientComponent } from './patient-feature/components/list-patient/list-patient.component';
 import { AddPatientFormComponent } from './patient-feature/components/add-patient-form/add-patient-form.component';
-import { DossierPatientComponent } from './patient-feature/components/dossier-patient/dossier-patient.component';
-import { UserAddFormComponent } from './user-feature/components/user-add-form/user-add-form.component';
+import { DossierPatientComponent } from './visites-feature/components/dossier-patient/dossier-patient.component';
 import { ListUserComponent } from './user-feature/components/list-user/list-user.component';
 import { CategoriesComponent } from './categories-feature/components/categories/categories.component';
 import { CategorieDetailComponent } from './categories-feature/components/categorie-detail/categorie-detail.component';
-import{VisiteComponent} from "./visites-feature/components/Visite/visite.component";
+import { NewVisiteComponent } from './visites-feature/components/new-visite/new-visite.component';
 const routes: Routes = [
-    {
-        path : 'dashboard' , 
-        component : DashboardComponent
-    },
-    {
-     path:'VisiteList',
-     component : VisiteComponent
-    },
-    {
-      path : 'dossier' , 
-      component : DossierPatientComponent
-    },
-    {
-      path : 'users' , 
-      component : ListUserComponent
-    },
-    {
-      path : 'categories' , 
-      component : CategoriesComponent
-    },
-    {
-      path : 'categories-detail',
-      component : CategorieDetailComponent
-    },
-    {
-        path : 'patients' , 
-        component : ListPatientComponent ,
-        children : [
-            {
-              path : 'add',
-              component : AddPatientFormComponent
-            }
-        ]
-    }
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+
+  {
+    path: 'users',
+    component: ListUserComponent
+  },
+  {
+    path: 'categories',
+    component: CategoriesComponent
+  },
+  
+  {
+    path: 'categories-detail/:name',
+    component: CategorieDetailComponent
+  },
+
+
+  {
+    path: 'patients',
+    component: ListPatientComponent,
+  },
+  {
+    path: 'patients/dossier/:id',
+    component: DossierPatientComponent,
+  },
+  {
+    path: 'patients/dossier/add-new-visite/:id',
+    component: NewVisiteComponent
+  },
+
 ];
 
 @NgModule({

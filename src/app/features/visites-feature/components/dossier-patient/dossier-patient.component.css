@@ -28,7 +28,6 @@
   }
   #content main .head-title .left .breadcrumb li a {
     color: var(--dark-grey);
-    pointer-events: none;
   }
   #content main .head-title .left .breadcrumb li a.active {
     color: var(--blue);
@@ -288,3 +287,6 @@
     transform: scale(1.1);
   }
   
+  .breadcrumb li {
+    cursor: pointer;
+  }

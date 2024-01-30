@@ -28,11 +28,9 @@
   }
   #content main .head-title .left .breadcrumb li a {
     color: var(--dark-grey);
-    pointer-events: none;
   }
   #content main .head-title .left .breadcrumb li a.active {
     color: var(--blue);
-    pointer-events: unset;
   }
   #content main .head-title .btn-download {
     height: 36px;
@@ -246,3 +244,6 @@
     transform: scale(1.1);
   }
   
+  .breadcrumb li {
+    cursor: pointer;
+  }
