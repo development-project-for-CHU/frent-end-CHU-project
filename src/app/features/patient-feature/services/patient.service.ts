@@ -37,4 +37,9 @@ export class PatientService {
   deletePatient(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  getCountGenders(): Observable<{ [key: string]: number }> {
+    const countGendersUrl = `${this.apiUrl}/count-genders`;
+    return this.http.get<{ [key: string]: number }>(countGendersUrl);
+  }
 }

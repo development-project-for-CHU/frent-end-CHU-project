@@ -112,6 +112,8 @@ export class CategorieSelectionFormComponent implements OnDestroy {
            break;
       }
 
+      console.log("newVisite" , newVisite)
+
       this.visiteService.setNewVisite(newVisite);
 
 
@@ -119,8 +121,6 @@ export class CategorieSelectionFormComponent implements OnDestroy {
   }
 
   AddToSelectedItem(elSelectionneDuPartieCommune : PartieCommune , elSelectionneDuPartieSpecialise : PartieSpecialise ){
-    console.log("******>",this.categorieName)
-    console.log(elSelectionneDuPartieCommune);
 
     if(elSelectionneDuPartieCommune){
       switch (this.categorieName) {

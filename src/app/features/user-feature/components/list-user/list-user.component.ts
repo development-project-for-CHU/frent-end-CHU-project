@@ -11,6 +11,7 @@ import { User } from '../../model/user.model';
 })
 export class ListUserComponent {
   users: User[] = []; // Initialize to an empty array
+  rolesData: { roleName: string, count: number }[] = [];
 
   constructor(
     private userService: UserService, 
@@ -18,6 +19,15 @@ export class ListUserComponent {
 
   ngOnInit(): void {
     this.getUsers();
+    this.getInfosAboutCounts();
+
+  }
+
+  getInfosAboutCounts(){
+    this.userService.getCountRoles().subscribe(data => {
+      this.rolesData = Object.keys(data)
+        .map(roleName => ({ roleName: roleName.toLowerCase(), count: data[roleName] }));
+    });
   }
 
   getUsers(): void {
@@ -68,6 +78,8 @@ export class ListUserComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.getUsers(); // Refresh the list whether there's a result or not
+      this.getInfosAboutCounts();
+
     });
   }
 }

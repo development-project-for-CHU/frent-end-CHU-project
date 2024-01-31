@@ -38,4 +38,9 @@ export class UserService {
   deleteUser(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  getCountRoles(): Observable<{ [key: string]: number }> {
+    const countRolesUrl = `${this.apiUrl}/count-roles`;
+    return this.http.get<{ [key: string]: number }>(countRolesUrl);
+  }
 }

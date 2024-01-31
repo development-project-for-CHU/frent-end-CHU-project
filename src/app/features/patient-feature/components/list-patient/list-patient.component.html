@@ -17,26 +17,11 @@
     </div>
     <ul class="box-info">
       <!-- These could be dynamic if you have relevant data -->
-      <li>
-        <i class='bx bxs-group'></i>
-
-        <span class="text">
-          <h3>10</h3>
-          <p>Homme</p>
-        </span>
-      </li>
-      <li>
+      <li *ngFor="let gender of gendersData">
         <i class='bx bxs-group'></i>
         <span class="text">
-          <h3>12</h3>
-          <p>Femme</p>
-        </span>
-      </li>
-      <li>
-        <i class='bx bxs-calendar-check'></i>
-        <span class="text">
-          <h3>4</h3>
-          <p>Nombre de patient ajouté aujourdhui</p>
+          <h3>{{ gender.count }}</h3>
+          <p>{{ gender.genderName }}</p>
         </span>
       </li>
     </ul>

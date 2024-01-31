@@ -18,6 +18,7 @@ export class ListPatientComponent implements OnInit {
   searchBy: string = 'iip'; // default search by ID
 
   filteredPatient = this.patients;
+  gendersData: { genderName: string, count: number }[] = [];
 
 
   constructor(private patientService: PatientService , private dialog : MatDialog) {}
@@ -25,6 +26,17 @@ export class ListPatientComponent implements OnInit {
   ngOnInit(): void {
     this.getPatients();
     console.log("filteredPatient" , this.filteredPatient)
+    this.getInfosAboutCounts();
+  }
+
+
+  getInfosAboutCounts(){
+    this.patientService.getCountGenders().subscribe(data => {
+      this.gendersData = Object.keys(data)
+        .map(genderName => ({ genderName: genderName.toLowerCase(), count: data[genderName] }));
+
+      console.log(this.gendersData);
+    });
   }
 
   getPatients(): void {

@@ -21,27 +21,14 @@
       <!-- Rest of your stats can go here if you want to keep them -->
       <ul class="box-info">
         <!-- These could be dynamic if you have relevant data -->
-        <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-            <h3>10</h3>
-            <p>Medecin</p>
-          </span>
-        </li>
-        <li>
+        <li *ngFor="let role of rolesData">
           <i class='bx bxs-group'></i>
           <span class="text">
-            <h3>5</h3>
-            <p>Chef service</p>
+            <h3>{{ role.count }}</h3>
+            <p>{{ role.roleName }}</p>
           </span>
         </li>
-        <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-            <h3>10</h3>
-            <p>Infirmier</p>
-          </span>
-        </li>
+        
       </ul>
       <div class="table-data">
         <div class="order">
